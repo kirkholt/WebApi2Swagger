@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="Models\Koen.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\ValidationError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

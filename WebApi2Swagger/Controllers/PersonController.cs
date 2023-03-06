@@ -1,12 +1,9 @@
 ﻿using Swashbuckle.Swagger.Annotations;
-using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -76,7 +73,8 @@ namespace WebApi2Swagger.Controllers
         }
 
         // POST: api/Person
-        [ResponseType(typeof(Person))]
+        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(Person))]
+        [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(List<ValidationError>))]
         public async Task<IHttpActionResult> PostPerson(Person person)
         {
             if (!ModelState.IsValid)
